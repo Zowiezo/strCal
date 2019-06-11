@@ -23,8 +23,8 @@ describe("the add function", function () {
         expect(calculator.add(",8,1")).toEqual(9);
     });
 
-    it("should return 10 if string is \"1,1,1,1,1,1,1,1,1,1\"", function () {
-        expect(calculator.add("1,1,1,1,1,1,1,1,1,1")).toEqual(10);
+    it("should return 5 if string is \"1,1,1,1,1,\"", function () {
+        expect(calculator.add("1,1,1,1,1,")).toEqual(5);
     });
 
     it("should return 6 if string is \"2\\n1,3\"", function () {
