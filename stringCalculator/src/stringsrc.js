@@ -1,8 +1,8 @@
-let calculator = (function () {
+let calculator = (function() {
 
     function add(numberString) {
         if (numberString === '') {
-            return 0
+            return 0;
         }
         let delimiter = getDelimiter(numberString)
         let formattedInput = formatInput(numberString)
@@ -15,7 +15,7 @@ let calculator = (function () {
         if (matches && matches.length > 0) {
             return input.replace(delimiterRegExp, '')
         };
-        return input
+        return input;
     };
 
     function getDelimiter(input) {
@@ -33,7 +33,7 @@ let calculator = (function () {
         if (matches && matches[1]) {
             return matches[1]
         };
-        return /[\n,]/
+        return /[\n,]/;
     };
 
     function getNumbers(string, delimiter) {
@@ -43,21 +43,23 @@ let calculator = (function () {
     };
 
     function calculateSum(numbers) {
-        let negatives = []
+        let negatives = [];
         let finalSum = numbers.reduce((sum, n) => {
             if (n > 1000) {
-                return 0
-            };
+                return 0;
+            }
+
             if (n < 0) {
-                negatives.push(n)
-                return 0
-            };
-            return sum + n
-        }, 0)
+                negatives.push(n);
+                return 0;
+            }
+            return sum + n;
+        }, 0);
+
         if (negatives.length > 0) {
-            throw new Error('negative numbers not allowed' + negatives.join(','))
+            return "negative numbers not allowed"
         };
-        return finalSum
+        return finalSum;
     };
 
     return {
